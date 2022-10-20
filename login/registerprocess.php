@@ -15,7 +15,7 @@ if (isset($_POST["submit"])) {
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
     // check whether function works
-    $check = add_customer_ctrl($name, $email, $hash, $country, $city, $contact);
+    $check = addcustomer_ctrl($name, $email, $hash, $country, $city, $contact);
 
     if ($check) {
         echo "Registration Successful";

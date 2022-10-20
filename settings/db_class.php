@@ -106,6 +106,15 @@ class db_connection
 		return mysqli_fetch_all($this->results, MYSQLI_ASSOC);
 	}
 
+	function db_fetch() {
+		if ($this-> results == null) {
+			return false;
+		} elseif ($this -> results == false) {
+			return false;
+		}
+		return mysqli_fetch_assoc($this->results); 
+	}
+
 
 	//count data
 	/**

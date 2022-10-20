@@ -7,13 +7,13 @@ require("../functions/function.php");
 
 
 //--INSERT--//
-function add_customer_ctrl($a, $b, $c, $d, $e, $f){
+function addcustomer_ctrl($cus_name, $cus_email, $cus_pass, $cus_country, $cus_city, $cus_contact){
 
 // creating an instance
-  $add = new customer_class;
+  $add = new customerclass;
 
 // return method
-  $run_query =  $add -> insert_customer($a, $b, $c, $d, $e, $f);
+  $run_query =  $add -> insertcustomer($cus_name, $cus_email, $cus_pass, $cus_country, $cus_city, $cus_contact);
 
   if ($run_query) {
     return $run_query; 
@@ -28,30 +28,37 @@ function add_customer_ctrl($a, $b, $c, $d, $e, $f){
 
 //--SELECT--//
 //LOGIN
-function login_customer_ctrl($a, $b){
+function login_customer_ctrl($cus_name, $cus_pass){
 
   // creating instance
-  $login = new customer_class();
+  $login = new customerclass();
 
+  $records = array();
   // return method
-  $data = $login -> login_customer($a);
-  if (verify_pass($data['customer_pass'], $b) == true) {
-    return $data;
+  $data = $login -> logincustomer($cus_name);
+
+  if ($data) {
+    if (verify_pass($data['customer_pass'], $cus_pass) == true) {
+      return true;
+    }else {
+      return false;
+    }
+  } else {
+    return false; 
   }
-  return null;
+  
+  
 }
 
 function user_email_ctrl($cid){
 
   // creating instance
-  $user_email = new customer_class();
+  $user_email = new customerclass();
 
   // return method
   $data = $user_email -> user_email($cid);
     return $data;
 }
-//--UPDATE--//
 
-//--DELETE--//
 
 ?>

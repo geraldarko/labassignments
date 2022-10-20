@@ -10,26 +10,27 @@ require_once("../settings/db_class.php");
  *
  */
 
-class customer_class extends db_connection
+class customerclass extends db_connection
 {
 	//--INSERT--//
-	function insert_customer($a, $b, $c, $d, $e, $f)
+
+	function insertcustomer($cus_name, $cus_email, $cus_pass, $cus_country, $cus_city, $cus_contact)
 	{
-		$sql = "INSERT INTO `customer`(`customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `user_role`) VALUES ('$a','$b','$c','$d','$e', '$f', '2')";
+		$sql = "INSERT INTO `customer`(`customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `user_role`) VALUES ('$cus_name','$cus_email','$cus_pass','$cus_country','$cus_city', '$cus_contact', '2')";
 
 		return $this->db_query($sql);
 	}
 
 	//--SELECT--//
-	function login_customer($a){
+	function logincustomer($cus_email){
 
-		$sql =" SELECT * FROM `customer` WHERE `customer_email` = '$a'";
+		$sql = "SELECT * FROM `customer` WHERE `customer_email` = '$cus_email'";
 
 		return $this -> db_fetch_one($sql);
 	}
 
-	function user_email($cid){
-		$sql = "SELECT customer_email FROM customer WHERE customer_id = '$cid'";
+	function user_email($c_id){
+		$sql = "SELECT customer_email FROM customer WHERE customer_id = '$c_id'";
 
 		return $this -> db_fetch_one($sql);
 	}

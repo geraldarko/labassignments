@@ -33,11 +33,11 @@
             <form action="./loginprocess.php" method="POST">
               <div class="form-group first">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" placeholder="Enter your email" name="login_email">
+                <input type="text" class="form-control" placeholder="Enter your email" name="loginemail">
               </div>
               <div class="form-group last mb-3">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" placeholder="Enter your Password" name="login_password">
+                <input type="password" class="form-control" placeholder="Enter your Password" name="loginpassword">
               </div>
               
               <div class="d-flex mb-5 align-items-center">

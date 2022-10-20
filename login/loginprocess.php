@@ -5,14 +5,14 @@ session_start();
 
 
 if (isset($_POST["submit"])) {
-    $login_email = $_POST['login_email'];
-    $login_password = $_POST['login_password'];
+    $login_email = $_POST['loginemail'];
+    $login_password = $_POST['loginpassword'];
 
     // check whether function works
     $login_check = login_customer_ctrl($login_email, $login_password);
 
 
-    if ($login_check == null) {
+    if (!$login_check) {
         echo "Login failed";
         //header("Location: ../index.php");
     }
