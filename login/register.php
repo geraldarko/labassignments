@@ -34,7 +34,7 @@
             <form action="./registerprocess.php" method="POST">
 
               <div class="form-group first">
-                <label for="fullname">Fullname</label>
+                <label for="fullname">Full name</label>
                 <input type="text" class="form-control" placeholder="Enter your fullname" id="fullname" name="fullname">
               </div>
 

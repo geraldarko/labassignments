@@ -1,3 +1,3 @@
 <?php
-    echo 'Hey Gerald';
+    echo 'Welcome to Shoppn';
 ?>
