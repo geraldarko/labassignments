@@ -30,23 +30,22 @@
           <div class="col-md-7">
             <h3>Login to <strong>Shoppn</strong></h3>
             <p class="mb-4">Free shipping on millions of items. Welcome to Shoppn</p>
-            <form action="#" method="post">
+            <form action="./loginprocess.php" method="POST">
               <div class="form-group first">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" placeholder="Enter your email" id="username">
+                <input type="text" class="form-control" placeholder="Enter your email" name="login_email">
               </div>
               <div class="form-group last mb-3">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" placeholder="Enter your Password" id="password">
+                <input type="password" class="form-control" placeholder="Enter your Password" name="login_password">
               </div>
               
               <div class="d-flex mb-5 align-items-center">
                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
               </div>
 
-
-              <button class="btn btn-block btn-primary"><a href="" style="color:white; text-decoration:none;">Login</a></button>
-              <button class="btn btn-block btn-primary"><a href="../login/register.php" style="color:white; text-decoration:none;">Register</a></button>
+              <button name="submit" id="button" class="button"> Login </button>
+              <a href="register.php" style="color:white; text-decoration:none;"><button id="button" class="button">Register</a></button> 
             </form>
           </div>
         </div>
