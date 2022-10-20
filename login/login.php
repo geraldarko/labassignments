@@ -45,10 +45,18 @@
               </div>
 
               <button name="submit" id="button" class="button"> Login </button>
-              <a href="register.php" style="color:white; text-decoration:none;"><button id="button" class="button">Register</a></button> 
+             
             </form>
+
+            
+            <button id="button" class="button m-1"> <a href="register.php" style="color:white; text-decoration:none;"> Register </a></button> 
+           
+
+
+            
           </div>
         </div>
+          
       </div>
     </div>
 

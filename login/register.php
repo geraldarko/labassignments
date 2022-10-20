@@ -35,7 +35,7 @@
 
               <div class="form-group first">
                 <label for="fullname">Full name</label>
-                <input type="text" class="form-control" placeholder="Enter your fullname" id="fullname" name="fullname">
+                <input type="text" class="form-control" placeholder="Enter your full name" id="fullname" name="fullname">
               </div>
 
               <div class="form-group last mb-3">
