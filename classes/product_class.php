@@ -79,8 +79,7 @@ class product_class extends db_connection
 
 	//--UPDATE--//
 	function update_category_cls($cat_id, $cat_name){
-	$sql = "UPDATE `categories` SET `cat_name` = '$cat_name' WHERE `cat_id` = $cat_id";
-
+	$sql = "UPDATE categories SET cat_name = '$cat_name' WHERE cat_id = $cat_id";
 	return $this -> db_query($sql);
 	}
 

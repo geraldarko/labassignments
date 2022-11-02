@@ -106,6 +106,7 @@ function add_category_ctrl($category_name){
       return $data;
   }
   //--UPDATE--//
+  
   //update all brands
   function update_all_category_ctrl($cat_id, $cat_name){
   
@@ -113,6 +114,6 @@ function add_category_ctrl($category_name){
     $update_category = new product_class();
   
     // return method
-    return $update_category -> update_category_cls($cat_id, $cat_name);
+    return $update_category->update_category_cls($cat_id, $cat_name);
   }
 ?>
