@@ -14,7 +14,7 @@ if (isset($_POST["submit"])) {
     // encryption of password using hash.
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    // check whether function works
+    // check whether function works  This is a controller 
     $check = addcustomer_ctrl($name, $email, $hash, $country, $city, $contact);
 
     if ($check) {

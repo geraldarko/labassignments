@@ -23,19 +23,26 @@ function addcustomer_ctrl($cus_name, $cus_email, $cus_pass, $cus_country, $cus_c
 }
 
 
-
+function logincustomer($cus_email){
+  $login = new customerclass();
+  $data = $login -> logincustomer($cus_email);
+  return $data;
+  
+}
 
 
 //--SELECT--//
 //LOGIN
-function login_customer_ctrl($cus_name, $cus_pass){
+function login_customer_ctrl($cus_email, $cus_pass){
+
+
 
   // creating instance
   $login = new customerclass();
 
   $records = array();
   // return method
-  $data = $login -> logincustomer($cus_name);
+  $data = $login -> logincustomer($cus_email);
 
   if ($data) {
     if (verify_pass($data['customer_pass'], $cus_pass) == true) {

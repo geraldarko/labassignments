@@ -15,7 +15,7 @@
     
     <!-- Style -->
     <link rel="stylesheet" href="../css/style.css">
-
+    
     <title>Register To Shoppn</title>
   </head>
   <body>
