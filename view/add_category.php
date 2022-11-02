@@ -36,7 +36,7 @@ else {
 	<title>Update Category</title>
 </head>
 <body>
- <form method="GET" action="../actions/update_category.php">
+ <form method="POST">
   <div class="container">
     <input type="hidden" name="category_id" value="<?php echo $cid?>">
 

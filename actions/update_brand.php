@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
     $brand_name =$_POST['update_brand'];
 
     update_all_brands_ctrl($brand_id, $brand_name);
-    header('Location: ../view/brandmgt.php');
+    header('Location: ../view/brand.php');
 }
 
 ?>

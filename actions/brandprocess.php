@@ -8,7 +8,7 @@ $brand_check = add_brand_ctrl($brand_name);
 
 if ($brand_check) {
 	echo "Brand name inserted successfully";
-	header('Location: ../view/brandmgt.php');
+	header('Location: ../view/brand.php');
 }
 else{
 	echo "brand name insertion failed";
