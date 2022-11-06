@@ -116,4 +116,73 @@ function add_category_ctrl($category_name){
     // return method
     return $update_category->update_category_cls($cat_id, $cat_name);
   }
+
+/* PRODUCT */
+
+//--INSERT--//
+
+function add_product_ctrl($pcat, $pbrand, $ptitle, $pprice, $pdescr, $pimage, $pkey){
+
+  //creating an instance
+  $add_product = new product_class();
+
+  // return method
+  return $add_product -> insert_product($pcat, $pbrand, $ptitle, $pprice, $pdescr, $pimage, $pkey);
+}
+
+//SELECT
+//selecting all product
+function select_all_product_ctrl(){
+
+  // creating instance
+  $select_product = new product_class();
+
+  // return method
+  return $select_product -> select_product();
+  
+}
+
+//selecting all products
+function select_all_products_ctrl(){
+
+  // creating instance
+  $select_product = new product_class();
+
+  // return method
+  $data = $select_product -> select_product();
+    return $data;
+}
+
+function search_products_ctrl($a){
+
+  $search_product = new product_class();
+
+  return $search_product -> search_products($a);
+
+}
+
+//selecting one product
+function select_product_ctrl($product_id){
+
+  // creating instance
+  $select_product = new product_class();
+
+  // return method
+  $data = $select_product -> select_one_product($product_id);
+    return $data;
+}
+
+//--UPDATE--//
+//update all product
+function update_all_product_ctrl($pid, $pcat, $pbrand, $ptitle, $pprice, $pdesc, $pimage, $pkey){
+
+  //creating instance
+  $update_category = new product_class();
+
+  // return method
+  return $update_category -> update_product_cls($pid, $pcat, $pbrand, $ptitle, $pprice, $pdesc, $pimage, $pkey);
+  
+}
+
+
 ?>

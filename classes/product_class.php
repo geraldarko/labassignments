@@ -83,7 +83,56 @@ class product_class extends db_connection
 	return $this -> db_query($sql);
 	}
 
+	/* PRODUCT */
+	//--INSERT--//
 
+	function insert_product($pcat, $pbrand, $ptitle, $pprice, $pdescr, $pimage, $pkey){
+
+		$sql = "INSERT INTO `products`(`product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`) 
+				VALUES ('$pcat', '$pbrand', '$ptitle', '$pprice', '$pdescr', '$pimage', '$pkey')";
+	
+		return $this -> db_query($sql);
+	}
+	
+	//--SELECT--//
+		//Select all
+		function select_product(){
+			$sql =" SELECT * FROM `products`";
+	
+			$prods = $this -> db_fetch_all($sql);
+			return $prods;
+		}
+	
+	
+	
+		//Select one
+		function select_one_product($product_id){
+			$sql =" SELECT * FROM `products` WHERE `product_id` = '$product_id'";
+	
+			return $this -> db_fetch_one($sql);
+		}
+	
+		//Search all
+		/* function search_all_products($a){
+			$sql ="SELECT * FROM `products` WHERE 'product_keywords' LIKE '%$a%'";
+			print_r($this -> db_fetch_all($sql));
+			echo($a);
+			return $this -> db_fetch_all($sql);
+		} */
+		function search_products($a){
+			$sql = "SELECT * FROM `products` WHERE `product_title` LIKE '%$a%'";
+			return $this ->db_fetch_all($sql);
+			//return $sql;
+		}
+	
+	
+		//--UPDATE--//
+		function update_product_cls($pid, $pcat, $pbrand, $ptitle, $pprice, $pdesc, $pimage, $pkey){
+			$sql = "UPDATE products SET product_cat = '$pcat', product_brand = '$pbrand', product_title = '$ptitle', product_price = '$pprice', product_desc = '$pdesc', product_image = '$pimage', product_keywords = '$pkey' 
+			WHERE product_id = $pid";
+		
+			return $this -> db_query($sql);
+			}
 
 
 

@@ -35,7 +35,7 @@ else {
  <form method="POST">
   <div class="container">
     <input type="hidden" name="brand_id" value="<?php echo($bid)?>">
-
+    <button><a href="brand.php">Back</a></button>
     <br><br>
     <h3><label for="text"><b>Brand Name</b></label><br></h3>
     <input type="text" placeholder="Update Brand Name" name="update_brand" id="update_brand" value="<?php echo($brand_detail['brand_name'])?>">

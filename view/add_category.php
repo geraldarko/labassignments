@@ -38,6 +38,8 @@ if (logged_in() == false) {
       <div class="container">
         <input type="hidden" name="category_id" value="<?php echo $cat_id ?>">
 
+        <button><a href="category.php">Back</a></button>
+
         <h3><label for="text"><b>Category Name</b></label><br></h3>
         <input type="text" placeholder="Update Category Name" name="update_category" id="update_category" value="<?php echo ($category_detail['cat_name']) ?>">
 

@@ -31,15 +31,17 @@ if (isset($_SESSION['name']) && $_SESSION['role'] == '1') {
 
 	<button type="button" onclick = "document.location= '../login/register.php'"><b>Register</b></button> 
 	
-	<button type="button" onclick = "document.location= 'login/logout.php'"><b>Logout</b></button>
+	<button type="button" onclick = "document.location= '../actions/logout.php'"><b>Logout</b></button>
+
+	<button type="button" onclick = "document.location= ''"><b>Home</b></button>
 	
-	<button type="button" onclick = "document.location= '../view/brand.php'"><b>Brand</b></button>
+	<button type="button" onclick = "document.location= 'brand.php'"><b>Brand</b></button>
 	
-	<button type="button" onclick = "document.location= '../view/category.php'"><b>Category</b></button>
+	<button type="button" onclick = "document.location= 'category.php'"><b>Category</b></button>
 	
-	<button type="button" onclick = "document.location= 'view/product.php'"><b>Add Product</b></button>	
+	<button type="button" onclick = "document.location= 'product.php'"><b>Add Product</b></button>	
 	
-	<button type="button" onclick = "document.location= 'view/all_product.php'"><b>All Products</b></button>
+	<button type="button" onclick = "document.location= 'allproduct.php'"><b>All Products</b></button>
 	 
 	<form action="view/product_search_result.php" method="GET">
 	<input type="text" placeholder="Search by title..." name="search" id="search">
@@ -48,7 +50,7 @@ if (isset($_SESSION['name']) && $_SESSION['role'] == '1') {
 	
 if (isset($_SESSION['name']) && $_SESSION['role'] == '2'){
 	?> 
-	<button type="button" onclick = "document.location= 'login/logout.php'"><b>Logout</b></button> 
+	<button type="button" onclick = "document.location= '../actions/logout.php'"><b>Logout</b></button> 
 	
 	<button type="button" onclick = "document.location= 'login/register.php'"><b>Register</b></button>	
 	
