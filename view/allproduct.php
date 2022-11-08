@@ -23,6 +23,10 @@ else {
     <button type="button" onclick = "document.location= 'product.php'"><b>Add Product</b></button>	
     
     <button type="button" onclick = "document.location= ''"><b>All Products</b></button>
+
+    <form action="product_search_result.php" method="GET">
+    <input type="text" placeholder="Search by title..." name="search" id="search">
+      <button type="submit"><b>Search</b></button> 
      
     <?php } 
     
@@ -50,7 +54,12 @@ else {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>th, td {border: 1px solid black;font: 1em sans-serif;padding: 1rem;}</style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>th, td {border: 1px solid black;font: 1em sans-serif;padding: 1rem;}</style>
+    <style>th, td {border: 1px solid black;font: 1em sans-serif;padding: 1rem;}</style>
     <style> form {padding:0.5rem;font: 1em sans-serif;}</style>
     <style> input {padding: 0.5rem; font: 1em sans-serif;}</style>
   
@@ -70,6 +79,7 @@ else {
     <th> Product Description</th>
     <th> Product Image</th>
     <th> Product Keyword</th>
+    <th> Add To Cart </th>
   </tr>
   <?php 
     $productlist = select_all_product_ctrl();
@@ -84,6 +94,7 @@ else {
     <td> <?php echo $showproduct['product_desc']?></td>
     <td> <img src="<?php echo $showproduct['product_image']?>" width="50" height="50"></td>
     <td> <?php echo $showproduct['product_keywords']?></td>
+    <td><div><a href=''> <span class="fa fa-cart-plus"></span></a></div></td>
   </tr>
   <?php
     endforeach;
