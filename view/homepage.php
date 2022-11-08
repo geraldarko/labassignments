@@ -57,13 +57,13 @@ if (isset($_SESSION['name']) && $_SESSION['role'] == '2'){
 	?> 
 	<button type="button" onclick = "document.location= '../actions/logout.php'"><b>Logout</b></button> 
 	
-	<button type="button" onclick = "document.location= 'login/register.php'"><b>Register</b></button>	
+	<button type="button" onclick = "document.location= '../login/register.php'"><b>Register</b></button>	
 	
-	<button type="button" onclick = "document.location= ''"><b>All Products</b></button>	
+	<button type="button" onclick = "document.location= 'allproduct.php'"><b>All Products</b></button>	
 	
 	<button type="button" onclick = "document.location= ''"><b>Carts</b></button>
 
-	<form action="view/product_search_result.php" method="GET">
+	<form action="product_search_result.php" method="GET">
 	<input type="text" placeholder="Search by title..." name="search" id="search">
     <button type="submit"><b>Search</b></button> 
 
