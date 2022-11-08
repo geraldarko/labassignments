@@ -41,30 +41,9 @@
     ?>
 
 
-
-
-
         <div class="container">
             <br>
 
-
-
-            <!-- <div class="card-columns">
-    <div class="card bg-primary"> 
-      Image of the product
-      <img src="<?php echo $product_one['product_image']  ?>" style="width: 350px; height: 150px">
-      <div class="card-body text-center">
-        <p class="card-text"><?php echo $product_one['product_title'] ?></p>
-        <p class="card-text"><b>$<?php echo $product_one['product_price'] ?></b></p>
-        <p class="card-text"><?php echo $product_one['product_desc'] ?></p>
-        <p class="card-text"><?php echo $product_one['product_keywords'] ?></p>
-       
-        <button type="button" onclick = "document.location= 'view/single_product.php'"><b>View More</b></button> 
-        <br><br>
-
-       <button type="button" onclick = "document.location= ''"><b>Add to Cart</b></button> 
-      </div>
-    </div>    -->
 
             <div class="container page-wrapper">
                 <div class="page-inner">
@@ -75,8 +54,9 @@
                                 <img class="img" src="" alt="">
                                 <div class="img-info">
                                     <div class="info-inner">
-                                        <span class="p-name"><?php echo $product_one['product_keywords'] ?></span>
-                                        <span class="p-company"><?php echo $product_one['product_title'] ?></span>
+                                        <span class="p-name"><?php echo $product_one['product_title'] ?></span>
+                                        <span class="p-company"><?php echo $product_one['product_keywords'] ?></span>
+                                       
                                     </div>
                                     <div class="a-size"><?php echo $product_one['product_desc'] ?></span></div>
                                 </div>

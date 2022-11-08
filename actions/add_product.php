@@ -8,15 +8,9 @@ if(isset($_POST['add_product'])){
     $ptitle = $_POST['ptitle'];
     $pprice = $_POST['pprice'];
     $pdescr = $_POST['pdescr'];
-    //$pr_image = $_POST['pimage'];
     $pkey = $_POST['pkey'];
     $pimage = $_FILES['pimage']["name"];
     $tmp = $_FILES['pimage']["tmp_name"];
-
-//     echo $ptitle;
-//     echo $pcat;
-        //print_r($tmp);
-//     echo $pimage;
 
      $folder_path = file_upload("images", "product", $tmp, $pimage);
 

@@ -11,14 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $pdesc = $_POST['pdescr'];
     $pimage = $_POST['pimage'];
     $pkey = $_POST['pkey'];
-
-   /*  echo ($pcat );
-    echo ($pbrand );
-    echo ($ptitle );
-    echo ($pprice );
-    echo ($pdesc );
-    echo ($pimage );
-    echo ($pkey ); */
     
     $pid = $_POST['pid'];
     echo($pid);
@@ -31,8 +23,4 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 }
 
-/* if (logged_in() == false){
-  header('Location: ../index.php');
-}
-else { */
 ?>

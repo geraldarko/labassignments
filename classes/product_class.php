@@ -112,13 +112,7 @@ class product_class extends db_connection
 			return $this -> db_fetch_one($sql);
 		}
 	
-		//Search all
-		/* function search_all_products($a){
-			$sql ="SELECT * FROM `products` WHERE 'product_keywords' LIKE '%$a%'";
-			print_r($this -> db_fetch_all($sql));
-			echo($a);
-			return $this -> db_fetch_all($sql);
-		} */
+		//--Search all--//
 		function search_products($a){
 			$sql = "SELECT * FROM `products` WHERE `product_title` LIKE '%$a%'";
 			return $this ->db_fetch_all($sql);

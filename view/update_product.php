@@ -25,10 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 }
 
-/* if (logged_in() == false){
-  header('Location: ../index.php');
-}
-else { */
 ?>
 
 <!DOCTYPE html>
