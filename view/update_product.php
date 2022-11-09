@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <title>Update</title>
 </head>
 <body>
-    <form action="../actions/updateproductprocess.php" method="POST">
+    <form action="../actions/updateproductprocess.php" method="POST" enctype="multipart/form-data">
   <div class="container">
   <button><a href="view_product.php"></a>Back</button>
     <h1>Update Product</h1>
@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <br><br>
 
     <label for="image"><b>Product Image</b></label><br>
-    <input type="file" name="pimage" id="pimage" value="<?php echo $product_detail['product_image'] ?>">
+    <input type="file" name="editpimage" id="pimage" value="<?php echo $product_detail['product_image'] ?>">
 
     <br><br>
 

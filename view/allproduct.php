@@ -79,7 +79,7 @@ else {
     <th> Product Description</th>
     <th> Product Image</th>
     <th> Product Keyword</th>
-    <th> Add To Cart </th>
+    <th> View </th>
   </tr>
   <?php 
     $productlist = select_all_product_ctrl();
@@ -94,7 +94,7 @@ else {
     <td> <?php echo $showproduct['product_desc']?></td>
     <td> <img src="<?php echo $showproduct['product_image']?>" width="50" height="50"></td>
     <td> <?php echo $showproduct['product_keywords']?></td>
-    <td><div><a href=''> <span class="fa fa-cart-plus"></span></a></div></td>
+    <td><div><a href="single_product.php?id=<?php echo $showproduct['product_id'];?>"> <span class="fa fa-cart-plus"></span></a></div></td>
   </tr>
   <?php
     endforeach;

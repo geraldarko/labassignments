@@ -9,18 +9,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $ptitle = $_POST['ptitle'];
     $pprice = $_POST['pprice'];
     $pdesc = $_POST['pdescr'];
-    $pimage = $_POST['pimage'];
+    //$pimage = $_POST['pimage'];
     $pkey = $_POST['pkey'];
+
+    //adding image
+    $pimage = $_FILES['editpimage']['name'];
+    //echo $pimage;
+    $targetdir = "../images/product/".$pimage;
+    $image = $targetdir.$pimage;
+    $tmp = $_FILES['editpimage']["tmp_name"];
     
     $pid = $_POST['pid'];
-    echo($pid);
-    $check_update = update_all_product_ctrl($pid, $pcat, $pbrand, $ptitle, $pprice, $pdesc, $pimage, $pkey);
-    if ($check_update) {
-        header("Location: ../view/product.php");
-    }
-    else{
-        return false;
-    }
+    // echo($pid);
+
+    if(move_uploaded_file($tmp,$targetdir)){
+        $check_update = update_all_product_ctrl($pid, $pcat, $pbrand, $ptitle, $pprice, $pdesc, $targetdir, $pkey);
+        if ($check_update) {
+            header("Location: ../view/product.php");
+        }
+        else{
+            return false;
+        }
+     }
 }
 
 ?>

@@ -1,4 +1,50 @@
 <?php require("../controllers/product_controller.php");
+
+include("../settings/core.php");
+if (logged_in() == false){
+  header('Location: ../index.php');
+}
+else {
+  if (isset($_SESSION['name']) && $_SESSION['role'] == '1') {	
+    ?>
+  
+    <button type="button" onclick = "document.location= '../login/register.php'"><b>Register</b></button> 
+    
+    <button type="button" onclick = "document.location= '../actions/logout.php'"><b>Logout</b></button>
+
+    <button type="button" onclick = "document.location= 'homepage.php'"><b>Home</b></button>
+    
+    <button type="button" onclick = "document.location= 'brand.php'"><b>Brand</b></button>
+    
+    <button type="button" onclick = "document.location= 'category.php'"><b>Category</b></button>
+    
+    <button type="button" onclick = "document.location= 'product.php'"><b>Add Product</b></button>	
+    
+    <button type="button" onclick = "document.location= ''"><b>All Products</b></button>
+
+    <form action="product_search_result.php" method="GET">
+    <input type="text" placeholder="Search by title" name="search" id="search">
+      <button type="submit"><b>Search</b></button> 
+     
+    <?php } 
+    
+  if (isset($_SESSION['name']) && $_SESSION['role'] == '2'){
+    ?> 
+    <button type="button" onclick = "document.location= '../actions/logout.php'"><b>Logout</b></button> 
+    
+    <button type="button" onclick = "document.location= '../login/register.php'"><b>Register</b></button>	
+    
+    <button type="button" onclick = "document.location= ''"><b>All Products</b></button>	
+    
+    <button type="button" onclick = "document.location= ''"><b>Carts</b></button>
+  
+    <form action="product_search_result.php" method="GET">
+    <input type="text" placeholder="Search by title" name="search" id="search">
+      <button type="submit"><b>Search</b></button> 
+      
+  
+     
+        <?php }}
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +59,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body> 
- 
+<br>
+<br>
 <?php
 
 
@@ -25,12 +72,14 @@
             $product_name = $product_one['product_title'];
 ?>
 
+
+
 <div class="container">
   
   <div class="card-columns">
     <div class="card bg-primary">
 
-      <img src="<?php echo $product_one['product_image']  ?>" style="width: 350px; height: 150px">
+     <img class="img" src=<?php echo $product_one['product_image']?> alt="" style="width: 100%; height: 225">
       <div class="card-body text-center">
         <p class="card-text"><?php echo $product_one['product_title']?></p>
         <p class="card-text"><b>$<?php echo $product_one['product_price']?></b></p>

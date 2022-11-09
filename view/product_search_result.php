@@ -37,7 +37,6 @@
     foreach ($product_search as $product_one) {
         $product_id = $product_one['product_id'];
         $product_name = $product_one['product_title'];
-
     ?>
 
 
@@ -51,7 +50,7 @@
                         <div class="el-wrapper">
                       
                             <div class="box-up">
-                                <img class="img" src="" alt="">
+                            <img class="img" src=<?php echo $product_one['product_image']?> alt="" style="width: 100%; height: 225">
                                 <div class="img-info">
                                     <div class="info-inner">
                                         <span class="p-name"><?php echo $product_one['product_title'] ?></span>
@@ -67,7 +66,7 @@
                                     <div class="h-bg-inner"></div>
                                 </div>
 
-                                <a class="cart" href="#">
+                                <a class="cart" href="">
                                     <span class="price">GH₵:<?php echo $product_one['product_price'] ?></span>
                                     <span class="add-to-cart">
                                         <span class="txt">Add To Cart</span>
