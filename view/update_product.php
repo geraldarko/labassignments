@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <body>
     <form action="../actions/updateproductprocess.php" method="POST" enctype="multipart/form-data">
   <div class="container">
-  <button><a href="view/product.php"></a>Back</button>
+  <button><a href="product.php"></a>Back</button>
     <h1>Update Product</h1>
     <p>Please fill in this form to update a product</p>
     
