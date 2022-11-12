@@ -26,6 +26,8 @@ else {
     
     <button type="button" onclick = "document.location= ''"><b>All Products</b></button>
 
+    <button type="button" onclick = "document.location= 'cart.php'"><b>Carts</b></button>
+
     <form action="product_search_result.php" method="GET">
     <input type="text" placeholder="Search by title" name="search" id="search">
       <button type="submit"><b>Search</b></button> 
@@ -40,7 +42,7 @@ else {
     
     <button type="button" onclick = "document.location= ''"><b>All Products</b></button>	
     
-    <button type="button" onclick = "document.location= ''"><b>Carts</b></button>
+    <button type="button" onclick = "document.location= 'cart.php'"><b>Carts</b></button>
   
     <form action="product_search_result.php" method="GET">
     <input type="text" placeholder="Search by title" name="search" id="search">
@@ -70,6 +72,7 @@ else {
 </head>
 <body>
 <br>
+<center>
 <table>
     <br>
     <br>
@@ -85,19 +88,18 @@ else {
     <th> Add To Cart </th>
   </tr>
 
-  <br>
+<!-- 
+  <button type="button" onclick = "document.location= 'cart.php'"><b>Cart</b></button> -->
 
-  <button type="button" onclick = "document.location= 'cart.php'"><b>Cart</b></button>
-
-  <br><br>
 <?php
 $cid = $_SESSION['customer_id'];
 
 $count_cart = count_cart_ctrl($cid);
 ?>
 
+<center>
 <p> Total number of items in the cart: <b><?php echo $count_cart[0]['SUM(qty)'] ?></b></p>
-
+</center>
   <br><br>
 
   <?php 
@@ -131,6 +133,7 @@ $count_cart = count_cart_ctrl($cid);
   </div>
 </div> -->
 
+
   <tr>
     <td> <?php $cat = select_category_ctrl($showproduct['product_cat']); echo $cat['cat_name'];?></td>
     <td> <?php $brand = select_brand_ctrl($showproduct['product_brand']);echo $brand['brand_name'];?></td>
@@ -148,5 +151,6 @@ $count_cart = count_cart_ctrl($cid);
     endforeach;
   ?>
 </table>
+</center>
 </body>
 </html>

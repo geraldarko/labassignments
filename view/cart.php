@@ -39,7 +39,7 @@ $total_price = total_price_ctrl($cid);
     
 
 <?php
-$cart_option = select_cart_ctrl();
+$cart_option = select_cart_ctrl($_SESSION['customer_id']);
 //print_r($cart_option);
     
     //if ($product_option) {

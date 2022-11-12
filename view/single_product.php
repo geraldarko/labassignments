@@ -60,6 +60,17 @@ else {
 </head>
 <body> 
 <br>
+
+<?php
+$cid = $_SESSION['customer_id'];
+
+$count_cart = count_cart_ctrl($cid);
+?>
+
+<p> Total number of items in the cart: <b><?php echo $count_cart[0]['SUM(qty)'] ?></b></p>
+
+  <br><br>
+  
 <br>
 <?php
 
@@ -85,8 +96,9 @@ else {
         <p class="card-text"><b>$<?php echo $product_one['product_price']?></b></p>
         <p class="card-text"><?php echo $product_one['product_desc']?></p>
         <p class="card-text"><?php echo $product_one['product_keywords']?></p>
-       
-        <button type="button" onclick = "document.location= ''"><b>Add to Cart</b></button> 
+
+
+        <button type="button" onclick = "document.location= ''"><a href="../actions/add_to_cart.php?id=<?php echo $product_one['product_id'];?>"><b>Add to Cart</b></button> 
       </div>
     </div>   
     

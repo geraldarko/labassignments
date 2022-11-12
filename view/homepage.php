@@ -61,7 +61,7 @@ if (isset($_SESSION['name']) && $_SESSION['role'] == '2'){
 	
 	<button type="button" onclick = "document.location= 'allproduct.php'"><b>All Products</b></button>	
 	
-	<button type="button" onclick = "document.location= ''"><b>Carts</b></button>
+	<button type="button" onclick = "document.location= 'cart.php'"><b>Carts</b></button>
 
 	<form action="product_search_result.php" method="GET">
 	<input type="text" placeholder="Search by title..." name="search" id="search">

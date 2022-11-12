@@ -26,9 +26,9 @@ class cart_class extends db_connection
 	}
 	
 	//select
-	function select_cart(){
+	function select_cart($c_id){
 		$sql =" SELECT products.product_id, products.product_title, products.product_price, products.product_desc, products.product_image, cart.qty 
-		FROM cart INNER JOIN products ON cart.p_id = products.product_id;";
+		FROM cart INNER JOIN products ON cart.p_id = products.product_id WHERE cart.c_id = $c_id";
 	
 		return $this -> db_fetch_all($sql);
 	}

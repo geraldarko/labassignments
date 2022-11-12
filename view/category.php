@@ -81,6 +81,7 @@ else {
 </form>
 <br>
 
+<center>
 <table>
         <th>Shoppn Category List</th>
         <th>Update</th>
@@ -115,5 +116,6 @@ else {
 ?>
   
 </table>
+</center>
 </body>
 </html>

@@ -59,6 +59,8 @@ if (isset($_SESSION['name']) && $_SESSION['role'] == '2'){
 <body>
     <form action="../actions/add_product.php" method="POST" enctype="multipart/form-data">
   <div class="container">
+    
+  <center>
     <h1>Add Product</h1>
     <p>Please fill in this form to add a product</p>
     
@@ -114,7 +116,7 @@ if (isset($_SESSION['name']) && $_SESSION['role'] == '2'){
         </select>
 
         <br><br>
-
+    
     <label for="text"><b>Product Title</b></label><br>
     <input type="text" placeholder="Enter Product title" name="ptitle" id="ptitle" required>
 
@@ -142,9 +144,11 @@ if (isset($_SESSION['name']) && $_SESSION['role'] == '2'){
 
     <button type="submit" class="registerbtn" name="add_product">Add Product</button>
     <br><br>
+    </center>
+    </div>
 
-  </div>
 
+  <center>
   <table>
   <tr>
     <th> Category </th>
@@ -175,6 +179,7 @@ if (isset($_SESSION['name']) && $_SESSION['role'] == '2'){
     endforeach;
   ?>
 </table>
+</center>
 
 <?php
 

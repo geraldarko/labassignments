@@ -22,11 +22,13 @@
 
     <nav class="navbar navbar-light bg-light">
         <a class="nav-link" href="homepage.php">Home <span class="sr-only"></span></a>
+        <a class="nav-link" href="cart.php">Cart <span class="sr-only"></span></a>
         <form action="product_search_result.php" method="GET">
             <input type="text" placeholder="Search by title..." name="search" id="search">
             <button type="submit"><b>Search</b></button>
         </form>
     </nav>
+
 
     <?php
     $search = $_GET['search'];
@@ -68,12 +70,15 @@
 
                                 <a class="cart" href="">
                                     <span class="price">GH₵:<?php echo $product_one['product_price'] ?></span>
-                                    <span class="add-to-cart">
-                                        <span class="txt">Add To Cart</span>
-                                    </span>
+
                                 </a>
+                                
                             </div>
+                            <br>
+
+                            <center><button type="button" onclick = "document.location= ''"><a href="../actions/add_to_cart.php?id=<?php echo $product_one['product_id'];?>"><b>Add to Cart</b></button></center>
                         </div>
+
                     </div>
                 </div>
             </div>

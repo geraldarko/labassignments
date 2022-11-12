@@ -82,7 +82,7 @@ else {
   </div>
 </form>
 <br>
-
+<center>
 <table>
         <th>Shoppn Brand List</th>
         <th>Update</th>
@@ -117,5 +117,6 @@ else {
 ?>
   
 </table>
+</center>
 </body>
 </html>

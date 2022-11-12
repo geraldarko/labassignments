@@ -26,13 +26,13 @@ function add_cart_ctrl($p_id, $ip_add, $c_id){
   return $add_cart -> insert_cart($p_id, $ip_add, $c_id);
 }
 
-function select_cart_ctrl(){
+function select_cart_ctrl($c_id){
 
   //creating an instance
   $select_cart = new cart_class();
 
   // return method
-  return $select_cart -> select_cart();
+  return $select_cart -> select_cart($c_id);
 }
 
 // count cart
