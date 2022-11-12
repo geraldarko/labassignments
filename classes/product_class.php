@@ -128,7 +128,75 @@ class product_class extends db_connection
 			return $this -> db_query($sql);
 			}
 
+/* CART */
+	//--insert--//
 
+	function insert_cart($p_id, $ip_add, $c_id){
 
+		$sql = "INSERT INTO `cart`(`p_id`, `ip_add`, `c_id`, `qty`) 
+				VALUES ('$p_id', '$ip_add', '$c_id', '1')";
+	
+		return $this -> db_query($sql);
+	}
+	
+	//select
+	function select_cart(){
+		$sql =" SELECT products.product_id, products.product_title, products.product_price, products.product_desc, products.product_image, cart.qty 
+		FROM cart INNER JOIN products ON cart.p_id = products.product_id;";
+	
+		return $this -> db_fetch_all($sql);
+	}
+	
+	// count cart items class
+	function count_cart($cid){
+		$sql = "SELECT SUM(qty) FROM cart WHERE c_id = $cid";
+	
+		return $this -> db_fetch_all($sql);
+	}
+	
+	// count cart items class
+	function count_one_cart($cid){
+		$sql = "SELECT qty FROM cart WHERE c_id = $cid";
+	
+		return $this -> db_fetch_one($sql);
+	}
+	
+	/*                        CART MANAGEMENT                       */
+	
+	function duplicate_cart($pid, $cid){
+		$sql = "SELECT p_id, c_id FROM cart WHERE p_id='$pid' AND c_id='$cid' ";
+		return $this ->db_fetch_all($sql);
+		//return $sql;
+	}
+	
+	function duplicate_one_cart($pid, $cid){
+		$sql = "SELECT qty FROM cart WHERE p_id='$pid' AND c_id='$cid' ";
+		return $this ->db_fetch_one($sql);
+	}
+	
+	function update_cart_qty($pid, $cid){
+		$sql = "UPDATE cart SET qty = qty+1 WHERE p_id = '$pid' AND c_id = '$cid'";
+		return $this -> db_query($sql);
+	}
+	
+	// when quantity is exactly one
+	function delete_cart_qty($pid, $cid){
+		$sql = "DELETE FROM cart WHERE p_id = '$pid' AND '$cid'"; 
+		return $this -> db_query($sql);
+	}
+	
+	//when quantity is more than 1
+	function update_more_cart_qty($pid, $cid){
+		$sql = "UPDATE cart SET qty = qty-1 WHERE p_id = '$pid' AND c_id = '$cid'";
+		return $this -> db_query($sql);
+	}
+	
+	function update_textbox($pid, $cid, $txtbox){
+		$sql = "UPDATE cart SET qty = '$txtbox' WHERE p_id = '$pid' AND c_id = '$cid'";
+		return $this -> db_query($sql);
+	}
+	
+	
+	
 }
 ?>

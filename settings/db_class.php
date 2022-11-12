@@ -135,6 +135,19 @@ class db_connection
 		return mysqli_num_rows($this->results);
 
 	}
+
+	function db_count_one($sql){
+		
+		//check if result was set
+		if (!$this->db_query($sql)) {
+			return false;
+		}
+		
+		//return a record
+		mysqli_fetch_assoc($this->results);
+		return $this ->db_count();
+
+	}
 	
 }
 ?>

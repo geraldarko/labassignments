@@ -77,7 +77,7 @@ else {
 <div class="container">
   
   <div class="card-columns">
-    <div class="card bg-primary">
+    <div class="card">
 
      <img class="img" src=<?php echo $product_one['product_image']?> alt="" style="width: 100%; height: 225">
       <div class="card-body text-center">

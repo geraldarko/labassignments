@@ -2,6 +2,8 @@
 
 require("../controllers/product_controller.php");
 
+
+
 include("../settings/core.php");
 if (logged_in() == false){
   header('Location: ../index.php');
@@ -80,12 +82,55 @@ else {
     <th> Product Image</th>
     <th> Product Keyword</th>
     <th> View </th>
+    <th> Add To Cart </th>
   </tr>
+
+  <br>
+
+  <button type="button" onclick = "document.location= 'cart.php'"><b>Cart</b></button>
+
+  <br><br>
+<?php
+$cid = $_SESSION['customer_id'];
+
+$count_cart = count_cart_ctrl($cid);
+?>
+
+<p> Total number of items in the cart: <b><?php echo $count_cart[0]['SUM(qty)'] ?></b></p>
+
+  <br><br>
+
   <?php 
     $productlist = select_all_product_ctrl();
     foreach($productlist as $showproduct):
-
+    
   ?>
+
+<!-- <div class="container">
+  
+  <div class="card-columns">
+    <div class="card bg">
+       Image of the product
+      <img src="<?php echo $showproduct['product_image']  ?>" style="width: 100%; height: 150px">
+      <div class="card-body text-center">
+        <p class="card-text"><?php echo $showproduct['product_title']?></p>
+        <p class="card-text"><b>$<?php echo $showproduct['product_price']?></b></p>
+
+        <form action="single_product.php" method="GET">
+          <input type="hidden" name="id" value="<?php echo $showproduct['product_id'] ?>">
+        <button type="submit"><b>View More</b></button> 
+        </form>
+
+        <form action="../actions/add_to_cart.php" method="GET">
+         input type="hidden" name="pid" value="<?php echo $showproduct['product_id']?>"> 
+        <button type="submit"><b>Add to Cart</b></button> 
+        </form>
+      </div>
+    </div>   
+    
+  </div>
+</div> -->
+
   <tr>
     <td> <?php $cat = select_category_ctrl($showproduct['product_cat']); echo $cat['cat_name'];?></td>
     <td> <?php $brand = select_brand_ctrl($showproduct['product_brand']);echo $brand['brand_name'];?></td>
@@ -94,7 +139,10 @@ else {
     <td> <?php echo $showproduct['product_desc']?></td>
     <td> <img src="<?php echo $showproduct['product_image']?>" width="50" height="50"></td>
     <td> <?php echo $showproduct['product_keywords']?></td>
-    <td><div><a href="single_product.php?id=<?php echo $showproduct['product_id'];?>"> <span class="fa fa-cart-plus"></span></a></div></td>
+    <td><div><a href="single_product.php?id=<?php echo $showproduct['product_id'];?>"> <span class="fa fa-eye"></span></a></div></td>
+    <form>
+    <td><div><a href="../actions/add_to_cart.php?id=<?php echo $showproduct['product_id'];?>"> <span class="fa fa-cart-plus"></span></td>
+    </form>
   </tr>
   <?php
     endforeach;
