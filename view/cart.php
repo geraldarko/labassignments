@@ -110,7 +110,7 @@ $cart_option = select_cart_ctrl($_SESSION['customer_id']);
 <br>
 
 <h3>Total Price: GHS <?php echo $total_price["SUM(cart.qty * products.product_price)"]?>.00</h3>
-<center><button type="button" href = 'payment.php'onclick = "document.location= 'payment.php'"><b>Checkout</b></button></center>
+<center><button type="button" onclick = "document.location= 'payment.php'"><b>Checkout</b></button></center>
 <br>
 <br>
 
