@@ -139,8 +139,8 @@ function insert_order_details($oid, $pid, $qty){
 	return $this -> db_query($sql);
 }
 
-function delete_from_cart($cid,$pid){
-	$sql = "DELETE FROM cart WHERE c_id = '$cid' AND p_id='$pid' ";
+function delete_from_cart($cid){
+	$sql = "DELETE FROM cart WHERE c_id = '$cid' ";
 
 	return $this -> db_query($sql);
 }

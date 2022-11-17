@@ -84,7 +84,7 @@ else{
     echo "order detail move failed";
 }
 
-$delete_cart_item = delete_from_cart($cid, $pid);
+$delete_cart_item = delete_from_cart($cid);
 
 if ($delete_cart_item) {
     echo "cart item deleted successful";    
