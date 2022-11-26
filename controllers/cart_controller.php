@@ -139,10 +139,10 @@ function insert_order_details_ctrl($oid, $pid, $qty){
   return $insert_orderdetails -> insert_order_details($oid, $pid, $qty);
 }
 
-function delete_from_cart($cid){
+function delete_from_cart($cid,$pid){
   $delete_from_cart = new cart_class;
 
-  return $delete_from_cart -> delete_from_cart($cid);
+  return $delete_from_cart -> delete_from_cart($cid,$pid);
 
 }
 
